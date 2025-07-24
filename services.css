@@ -1,0 +1,354 @@
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 10px;
+}
+
+#logo {
+  font-size: 23px;
+  margin-left: 60px;
+  margin-top: -1px;
+}
+
+#break {
+  font-size: 7px;
+}
+
+.nav-links {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  gap: 50px;
+}
+
+#FAQ {
+  color: black;
+  text-decoration: none;
+}
+
+#membership {
+  color: black;
+  text-decoration: none;
+}
+
+#service {
+  color: black;
+  text-decoration: none;
+}
+
+#gift {
+  color: black;
+  text-decoration: none;
+}
+
+#about {
+  color: black;
+  text-decoration: none;
+}
+
+#contact {
+  color: black;
+  text-decoration: none;
+}
+
+#sign {
+  color: black;
+  text-decoration: none;
+}
+
+#book {
+  background-color: rgb(220, 180, 184);
+  padding: 10px;
+  width: 130px;
+  border-radius: 5px;
+  border-color: rgb(220, 180, 184);
+  border-bottom: rgb(220, 180, 184);
+  border-right: rgb(220, 180, 184);
+  font-size: 15px;
+  margin-top: -5px;
+}
+
+#writing1{
+   margin-left: 200px;
+    font-size: 45px;
+    font-style: sans-serif;
+}
+
+#writing2{
+    margin-left: 200px;
+    font-size: 20px;
+    font-style: sans-serif;
+    color: rgb(58, 57, 57);
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+  gap: 100px;
+}
+
+.section2{
+    display: flex;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    margin-top: -200px;
+}
+
+#writing3{
+    padding-top: 200px;
+    font-size: 17px;
+    color: rgb(36, 33, 33);
+
+}
+
+#writing4{
+    padding-top: 200px;
+     font-size: 17px;
+    color: rgb(36, 33, 33);
+}
+
+#button1{
+    padding: 8px;
+    width: 130px;
+    border-radius: 10px;
+    background-color: rgb(220, 180, 184);
+    border: 2px;
+}
+
+#button2{
+    padding: 8px;
+    width: 130px;
+    border-radius: 10px;
+    background-color: rgb(220, 180, 184);
+    border: 2px;
+}
+
+.section3{
+    background-color: whitesmoke;
+    margin-top: -22px;
+    padding-top: 120px;
+    height: 270vh;
+}
+
+.writing5{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 20px;
+}
+
+.image-grid{
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 50px;
+    font-size: 20px;
+}
+
+#button3{
+    padding: 10px;
+    width: 120px;
+    background-color: rgb(220, 180, 184) ;
+    border: 2px;
+    border-radius: 15px;
+}
+
+#button3:hover{
+    background-color: white;
+    color: black;
+}
+
+#button4{
+    padding: 10px;
+    width: 120px;
+    background-color: rgb(220, 180, 184) ;
+    border: 2px;
+    border-radius: 15px;
+}
+
+#button4:hover{
+    background-color: white;
+    color: black;
+}
+
+#button5{
+    padding: 10px;
+    width: 120px;
+    background-color: rgb(220, 180, 184) ;
+    border: 2px;
+    border-radius: 15px;
+}
+
+#button5:hover{
+    background-color: white;
+    color: black;
+}
+
+.table1{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 30px;
+    
+}
+
+.table2{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    margin-top: 30px;
+    
+}
+
+.table3{
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 235px;
+    margin-top: 30px;
+    
+}
+
+.section4{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 200px;
+}
+
+#image1{
+  border-radius: 170px;
+}
+
+#writing6{
+  font-size: 50px;
+  color: rgb(31, 30, 30);
+  margin-top: 90px;
+}
+
+#writing7{
+  font-size: 20px;
+  color: gray;
+  
+}
+
+#writing8{
+  font-size: 30px;
+}
+
+#writing9{
+  font-size: 20px;
+  color: rgb(31, 30, 30) ;
+}
+
+#writing10{
+  color: rgb(220, 180, 184) ;
+}
+
+.aside{
+  margin-top: 90px;
+}
+
+#writing11{
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+  .vertical-line {
+      width: 2px;
+      background-color: black;
+       display: flex;
+      justify-content: center;
+    }
+
+    .hidden-text {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .dropdown-header {
+      cursor: pointer;
+      font-weight: bold;
+      color: #333;
+      display: flex;
+      justify-content: center;
+    }
+
+    #arrow{
+      margin-left: 280px;
+    }
+
+     .footer-text1 {
+  font-size: 15px;
+}
+
+#input-text {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 13px;
+}
+
+#button6 {
+  padding: 10px;
+  border-radius: 20px;
+  width: 150px;
+}
+
+.footer1 {
+  background-color: whitesmoke;
+  margin-top: -80px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 100px;
+  padding-top: 50px;
+}
+
+.footer-text2 {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-text3 {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-text4 {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-lists {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: space-around;
+  padding-bottom: 30px;
+}
+
+#icons {
+  padding-top: 13px;
+  color: rgb(212, 121, 130);
+}
+
+
+
+ 
