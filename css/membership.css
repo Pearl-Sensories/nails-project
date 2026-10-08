@@ -1,3 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -68,6 +79,50 @@
   margin-top: -5px;
 }
 
+/* Hamburger toggle (only shown on small screens) */
+.nav-toggle,
+.nav-toggle-label {
+  display: none;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-label span::before {
+  top: -7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+.nav-toggle:checked + .nav-toggle-label span {
+  background-color: transparent;
+}
+
+.nav-toggle:checked + .nav-toggle-label span::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .membership-section1{
     display: flex;
     justify-content: space-around;
@@ -76,7 +131,9 @@
 
 #membership-image{
     width: 700px;
+    max-width: 50vw;
     height: 90vh;
+    object-fit: cover;
 }
 
 #writings1{
@@ -129,7 +186,7 @@
 
 .membership-section2{
     background-color: whitesmoke;
-    height: 160vh;
+    min-height: 160vh;
 }
 
 .card1{
@@ -138,7 +195,7 @@
   border-style: solid;
   border-color: rgb(216, 142, 149);
     width: 360px;
-    height: 75vh;
+    min-height: 75vh;
     border-radius: 20px;
 }
 
@@ -148,7 +205,7 @@
   border-style: solid;
   border-color: rgb(216, 142, 149);
     width: 360px;
-    height: 75vh;
+    min-height: 75vh;
     border-radius: 20px;
 }
 
@@ -158,7 +215,7 @@
   border-style: solid;
   border-color: rgb(216, 142, 149);
     width: 360px;
-    height: 75vh;
+    min-height: 75vh;
     border-radius: 20px;
 }
 
@@ -242,6 +299,7 @@
 #card1-content4{
    padding: 8px;
    width: 300px;
+   max-width: 90%;
    border-radius: 20px;
    background-color: rgb(216, 142, 149) ;
    border: 2px;
@@ -291,6 +349,7 @@
 #card2-content4{
    padding: 8px;
    width: 300px;
+   max-width: 90%;
    border-radius: 20px;
    background-color: rgb(216, 142, 149) ;
    border: 2px;
@@ -335,6 +394,7 @@
 #card3-content4{
    padding: 8px;
    width: 300px;
+   max-width: 90%;
    border-radius: 20px;
    background-color: rgb(216, 142, 149) ;
    border: 2px;
@@ -361,10 +421,10 @@
     border-width: 1px;
   border-style: solid;
   border-color: rgb(102, 101, 101);
-    width: 1150px;
-    height: 40vh;
+    max-width: 1150px;
+    min-height: 40vh;
     border-radius: 20px;
-   margin-left: 80px;
+    margin: 0 auto;
   
 }
 
@@ -420,8 +480,8 @@
       width: 130px;
       border-radius: 20px;
       border: 2px;
-      margin-left: 600px;
-      margin-top: 50px;
+      display: block;
+      margin: 50px auto 0;
     }
 
     .footer-text1 {
@@ -490,6 +550,236 @@
   color: rgb(212, 121, 130);
 }
 
+/* ---------- Responsive: shared nav + footer ---------- */
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 24px;
+  }
 
+  #logo {
+    margin-left: 24px;
+  }
+}
 
+@media (max-width: 1024px) {
+  .nav-bar {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 0;
+    padding: 0 16px;
+  }
 
+  #logo {
+    margin-left: 0;
+    font-size: 20px;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin: 0 0 16px;
+    padding: 16px 0;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-divider {
+    display: none;
+  }
+
+  #book {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  p br {
+    display: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 20px 0;
+  }
+
+  #input-text {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 12px;
+  }
+
+  .footer-lists {
+    flex-wrap: wrap;
+    gap: 0 24px;
+  }
+
+  .footer-lists ul {
+    padding-left: 0;
+  }
+
+  .footer-icons {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 30px;
+  }
+
+  .footer-icons p {
+    margin: 6px 0;
+  }
+}
+
+/* ---------- Responsive: membership page ---------- */
+@media (max-width: 1200px) {
+  .cards {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    padding: 0 16px;
+  }
+
+  .container {
+    margin: 0 24px;
+  }
+
+  .container-lists {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .membership-section1 {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 24px;
+    padding: 0 16px;
+  }
+
+  #membership-image {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+  }
+
+  #writings1 {
+    font-size: 36px;
+  }
+
+  .icons {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    padding: 0 16px;
+  }
+
+  .icons > div {
+    flex: 1 1 280px;
+    max-width: 400px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .membership-section2 {
+    min-height: 0;
+    padding-bottom: 40px;
+  }
+
+  .writings4 {
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  #writings5 {
+    font-size: 30px;
+  }
+
+  #writings6 {
+    margin-top: 0;
+  }
+
+  .card1,
+  .card2,
+  .card3 {
+    width: 100%;
+    max-width: 400px;
+    min-height: 0;
+    padding-bottom: 24px;
+  }
+
+  .card1-content,
+  .card2-content,
+  .card3-content {
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  #card1-content1,
+  #card2-content1,
+  #card3-content1 {
+    font-size: 21px;
+  }
+
+  #card1-content2,
+  #card2-content2,
+  #card3-content2 {
+    font-size: 34px;
+  }
+
+  #below-cards {
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .container {
+    margin: 32px 16px 0;
+    min-height: 0;
+    padding-bottom: 16px;
+  }
+
+  #unlimited {
+    font-size: 22px;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .container-lists {
+    flex-direction: column;
+    gap: 0;
+    margin-left: 0;
+    font-size: 17px;
+  }
+
+  .container-lists li {
+    margin-bottom: 8px;
+  }
+
+  #icons-writing {
+    font-size: 24px;
+    text-align: center;
+    padding: 40px 16px 0;
+  }
+
+  #writings2,
+  #writings3 {
+    font-size: 17px;
+  }
+}

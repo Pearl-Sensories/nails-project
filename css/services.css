@@ -1,3 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -68,6 +79,50 @@
   margin-top: -5px;
 }
 
+/* Hamburger toggle (only shown on small screens) */
+.nav-toggle,
+.nav-toggle-label {
+  display: none;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-label span::before {
+  top: -7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+.nav-toggle:checked + .nav-toggle-label span {
+  background-color: transparent;
+}
+
+.nav-toggle:checked + .nav-toggle-label span::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 #writing1{
    margin-left: 200px;
     font-size: 45px;
@@ -128,7 +183,7 @@
     background-color: whitesmoke;
     margin-top: -22px;
     padding-top: 120px;
-    height: 270vh;
+    min-height: 270vh;
 }
 
 .writing5{
@@ -210,6 +265,13 @@
     gap: 235px;
     margin-top: 30px;
     
+}
+
+.table-divider{
+    width: 65%;
+    height: 2px;
+    background-color: rgb(230, 229, 229);
+    border: none;
 }
 
 .section4{
@@ -349,6 +411,236 @@
   color: rgb(212, 121, 130);
 }
 
+/* ---------- Responsive: shared nav + footer ---------- */
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 24px;
+  }
 
+  #logo {
+    margin-left: 24px;
+  }
+}
 
- 
+@media (max-width: 1024px) {
+  .nav-bar {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 0;
+    padding: 0 16px;
+  }
+
+  #logo {
+    margin-left: 0;
+    font-size: 20px;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin: 0 0 16px;
+    padding: 16px 0;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-divider {
+    display: none;
+  }
+
+  #book {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  p br {
+    display: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 20px 0;
+  }
+
+  #input-text {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 12px;
+  }
+
+  .footer-lists {
+    flex-wrap: wrap;
+    gap: 0 24px;
+  }
+
+  .footer-lists ul {
+    padding-left: 0;
+  }
+
+  .footer-icons {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 30px;
+  }
+
+  .footer-icons p {
+    margin: 6px 0;
+  }
+}
+
+/* ---------- Responsive: services page ---------- */
+@media (max-width: 1200px) {
+  #writing1,
+  #writing2 {
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+
+  .image-container {
+    gap: 40px;
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .image-grid {
+    gap: 40px;
+    padding: 0 16px;
+  }
+
+  .table1,
+  .table2,
+  .table3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  .table-divider {
+    width: calc(100% - 32px);
+  }
+
+  .section4 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+    padding: 0 16px;
+  }
+
+  #writing6 {
+    font-size: 38px;
+    margin-top: 0;
+  }
+
+  .aside {
+    margin-top: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  #writing1 {
+    font-size: 32px;
+    margin: 24px 16px 0;
+  }
+
+  #writing2 {
+    font-size: 17px;
+    margin: 0 16px;
+  }
+
+  .image-container {
+    gap: 16px;
+    margin-top: 40px;
+  }
+
+  .image-container img {
+    width: calc(50% - 8px);
+  }
+
+  .section2 {
+    flex-direction: column;
+    margin-top: -60px;
+    padding: 0 16px;
+  }
+
+  #writing3 {
+    padding-top: 90px;
+  }
+
+  #writing4 {
+    padding-top: 24px;
+  }
+
+  #writing3 ul,
+  #writing4 ul {
+    padding-left: 20px;
+  }
+
+  .section3 {
+    min-height: 0;
+    padding: 80px 0 60px;
+  }
+
+  .writing5 {
+    text-align: center;
+    padding: 0 16px;
+    font-size: 17px;
+  }
+
+  .image-grid {
+    gap: 12px;
+    font-size: 16px;
+  }
+
+  .image-grid > div {
+    flex: 1 1 0;
+    min-width: 0;
+    text-align: center;
+  }
+
+  #button3,
+  #button4,
+  #button5 {
+    max-width: 100%;
+  }
+
+  .table1,
+  .table2,
+  .table3 {
+    font-size: 15px;
+  }
+
+  #writing6 {
+    font-size: 32px;
+  }
+
+  #writing8 {
+    font-size: 24px;
+  }
+
+  #writing9 {
+    font-size: 17px;
+  }
+}
