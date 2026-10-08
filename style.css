@@ -1,3 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 .nav-bar {
   display: flex;
   justify-content: space-between;
@@ -68,9 +79,54 @@
   margin-top: -5px;
 }
 
+/* Hamburger toggle (only shown on small screens) */
+.nav-toggle,
+.nav-toggle-label {
+  display: none;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background-color: black;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.nav-toggle-label span::before {
+  top: -7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+.nav-toggle:checked + .nav-toggle-label span {
+  background-color: transparent;
+}
+
+.nav-toggle:checked + .nav-toggle-label span::before {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle:checked + .nav-toggle-label span::after {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
 .slider {
   position: relative;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   height: 500px;
   overflow: hidden;
   margin-top: 70px;
@@ -105,7 +161,7 @@ input[type="radio"] {
 }
 
 .content img {
-  width: 600px;
+  width: min(600px, 50vw);
   height: auto;
   border-radius: 8px;
 }
@@ -368,4 +424,200 @@ input[type="radio"] {
 #icons {
   padding-top: 13px;
   color: rgb(212, 121, 130);
+}
+
+/* ---------- Responsive: shared nav + footer ---------- */
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 24px;
+  }
+
+  #logo {
+    margin-left: 24px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-bar {
+    flex-wrap: wrap;
+    align-items: center;
+    margin-right: 0;
+    padding: 0 16px;
+  }
+
+  #logo {
+    margin-left: 0;
+    font-size: 20px;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+  }
+
+  .nav-links {
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    margin: 0 0 16px;
+    padding: 16px 0;
+    border-top: 1px solid #eee;
+  }
+
+  .nav-toggle:checked ~ .nav-links {
+    display: flex;
+  }
+
+  .nav-divider {
+    display: none;
+  }
+
+  #book {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  p br {
+    display: none;
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 20px 0;
+  }
+
+  #input-text {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 12px;
+  }
+
+  .footer-lists {
+    flex-wrap: wrap;
+    gap: 0 24px;
+  }
+
+  .footer-lists ul {
+    padding-left: 0;
+  }
+
+  .footer-icons {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px 30px;
+  }
+
+  .footer-icons p {
+    margin: 6px 0;
+  }
+}
+
+/* ---------- Responsive: home page ---------- */
+@media (max-width: 1200px) {
+  .content3 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .slider {
+    height: auto;
+    margin-top: 24px;
+  }
+
+  .content {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px;
+  }
+
+  .content img {
+    width: 100%;
+    max-width: 600px;
+  }
+
+  #writing2 {
+    display: block;
+    margin-top: 8px;
+  }
+
+  #writing2 br {
+    display: none;
+  }
+
+  .arrow {
+    top: 30%;
+    font-size: 1.5rem;
+  }
+
+  .content2,
+  .content4,
+  .content5 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    margin-top: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .content2 {
+    margin-top: 60px;
+  }
+
+  .content5 {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .text2,
+  .text4 {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .content3 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-top: 80px;
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  #writing1 {
+    font-size: 22px;
+  }
+
+  #writing2 {
+    font-size: 16px;
+  }
+
+  #writing1-2nd {
+    font-size: 30px;
+  }
+
+  #writing2-2nd,
+  #writing1-3rd,
+  #writing2-3rd,
+  #writing3-3rd,
+  #writing4-3rd,
+  .text4,
+  .text5 {
+    font-size: 17px;
+  }
 }
